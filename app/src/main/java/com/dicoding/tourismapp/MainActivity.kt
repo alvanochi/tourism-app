@@ -1,8 +1,9 @@
 package com.dicoding.tourismapp
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -59,7 +60,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 title = getString(R.string.menu_favorite)
             }
             R.id.nav_map -> {
-                Toast.makeText(this, "Coming soon", Toast.LENGTH_SHORT).show()
+                //bisa menggunakan ini
+//                startActivity(Intent(this, Class.forName("com.dicoding.tourismapp.maps.MapsActivity")))
+                //bisa juga seperti ini
+                val uri = Uri.parse("tourismapp://maps")
+                startActivity(Intent(Intent.ACTION_VIEW, uri))
+                //syaratnya Syaratnya Anda harus menambahkan Intent-filter pada AndroidManifest untuk menangkap ACTION_VIEW tersebut.
             }
         }
         if (fragment != null) {

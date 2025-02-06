@@ -39,6 +39,7 @@ android {
         viewBinding = true
         buildConfig = true
     }
+    dynamicFeatures += setOf(":maps")
 }
 
 dependencies {
