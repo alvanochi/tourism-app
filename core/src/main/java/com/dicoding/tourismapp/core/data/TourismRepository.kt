@@ -27,7 +27,11 @@ class TourismRepository(
             appExecutors: AppExecutors
         ): TourismRepository =
             instance ?: synchronized(this) {
-                instance ?: TourismRepository(remoteData, localData, appExecutors)
+               instance ?: TourismRepository(
+                        remoteData,
+                        localData,
+                        appExecutors
+                    )
             }
     }
 

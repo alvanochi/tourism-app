@@ -51,6 +51,12 @@ val repositoryModule = module {
     //untuk mendapatkan constructor gunakan get()
     single { RemoteDataSource(get()) }
     factory { AppExecutors() }
-    single<ITourismRepository> { TourismRepository(get(), get(), get()) }
+    single<ITourismRepository> {
+        com.dicoding.tourismapp.core.data.TourismRepository(
+            get(),
+            get(),
+            get()
+        )
+    }
     //provide interface dengan implementasinya menggunakan <>
 }
